@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --clr-yellow: hsl(47, 88%, 63%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-primary-400: hsl(0, 0%, 42%);
+    --clr-primary-900: hsl(0, 0%, 7%);
+
+    --font-family: "Figtree", serif;
+    --font-weight-400: 500;
+    --font-weight-800: 800;
+    --font-size-100: 12px;
+    --font-size-200: 14px;
+    --font-size-400: 1rem;
+    --font-size-800: 20px;
+    --line-height: 1.5;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--clr-yellow);
+    line-height: var(--line-height);
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* COMPOSITION */
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.5rem);
+}
+
+.card__content > * + * {
+  margin-top: 12px;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* UTILITY */
+
+.padding-24 {
+  padding: 1.5rem;
+}
+.padding-y {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.padding-x {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.border-900 {
+  border-radius: 20px;
+}
+.border-400 {
+  border-radius: 10px;
+}
+
+.border-100 {
+  border-radius: 4px;
+}
+
+.heading-400 {
+  font-size: var(--font-size-800);
+}
+
+.text-m-100 {
+  font-size: var(--font-size-100);
+}
+
+.text-m-200 {
+  font-size: var(--font-size-200);
+}
+
+@media only screen and (min-width: 992px) {
+  .text-size-400 {
+    font-size: var(--font-size-400);
+  }
+
+}
+
+.text-weight-800 {
+  font-weight:  var(--font-weight-800);
+}
+
+
+@media only screen and (min-width: 992px) {
+  .text-d-100 {
+    font-size: var(--font-size-200);
+  }
+
+  .text-d-200 {
+    font-size: var(--font-size-400);
+  }
+
+  .heading-800 {
+    font-size: 24px;
+  }
+
+}
+
+/* BLOCK */
+
+.card {
+  max-width: 384px;
+  width: 91%;
+  border: 1px solid black;
+  background-color: var(--clr-white);
+  box-shadow: 10px 5px 5px black;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background-color: var(--clr-yellow);
+  display: inline-block;
+  color: var(--clr-primary-900);
+  font-weight: var(--font-weight-800);
+}
+
+.card__content > p {
+  color: var(--clr-primary-400);
+}
+
+.author__avatar, .author__avatar > img {
+  width: 2rem;
+  border-radius: 50%;
+}
+
+.author__name {
+  font-weight: var(--font-weight-800);
+  font-size: var(--font-size-200);
+}
+
+a:hover {
+  color: var(--clr-yellow);
+  cursor: pointer;
+}
+
